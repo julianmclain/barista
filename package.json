@@ -5,7 +5,10 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "parcel frontend/public/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier \"**/*.{js,html}\" --write",
+    "lint": "eslint \"**/*.{js,jsx}\" --quiet"
   },
   "repository": {
     "type": "git",
@@ -19,6 +22,14 @@
   "homepage": "https://github.com/julian-rm/barista#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^1.19.1"
   }
 }
