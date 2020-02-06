@@ -1,10 +1,16 @@
-const express = require("express");
-const app = express();
-const port = 3000;
+const Koa = require("koa");
+const { Client } = require("pg");
 
-app.use(express.static("public"));
+// Init app
+const app = new Koa();
 
-app.get("/", (req, res) => res.send("welcome to Barista!"));
-app.get("/add", (req, res) => res.send("drink a cup?"));
+// Connect to DB
+const client = new Client();
+client.connect();
 
-app.listen(port, () => console.log(`Running Barist on port ${port}`));
+app.use(async function main(ctx) {
+  const res = await client.query("SELECT $1::text as message", ["Hello world"]);
+  ctx.body = res.rows[0].message;
+});
+
+app.listen(3000);
