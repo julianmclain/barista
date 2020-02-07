@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/julian-rm/barista#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "koa": "^2.11.0",
     "nodemon": "^1.19.1",
     "pg": "^7.18.1",

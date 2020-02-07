@@ -1,15 +1,12 @@
+require("dotenv").config();
 const Koa = require("koa");
-const { Client } = require("pg");
+const db = require("./db");
 
 // Init app
 const app = new Koa();
 
-// Connect to DB
-const client = new Client();
-client.connect();
-
 app.use(async function main(ctx) {
-  const res = await client.query("SELECT $1::text as message", ["Hello world"]);
+  const res = await db.query("SELECT $1::text as message", ["Hello world"]);
   ctx.body = res.rows[0].message;
 });
 
