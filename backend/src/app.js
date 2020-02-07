@@ -1,8 +1,4 @@
-const path = require("path");
-const envPath = path.resolve(__dirname, "../../.env");
-console.log(envPath);
-require("dotenv").config({ path: envPath });
-
+require("dotenv").config();
 const Koa = require("koa");
 
 const app = new Koa();
