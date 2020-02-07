@@ -7,6 +7,7 @@
     "start": "node backend/src/app.js",
     "dev": "parcel frontend/public/index.html",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "test:backend": "mocha ./backend/test/**/*.test.js",
     "format": "prettier \"**/*.{js,html}\" --write",
     "lint": "eslint \"**/*.{js,jsx}\" --quiet"
   },
@@ -29,8 +30,11 @@
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
+    "mocha": "^7.0.1",
     "parcel-bundler": "^1.12.4",
     "prettier": "^1.19.1"
   }

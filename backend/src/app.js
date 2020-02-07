@@ -1,13 +1,19 @@
-require("dotenv").config();
-const Koa = require("koa");
-const db = require("./db");
+const path = require("path");
+const envPath = path.resolve(__dirname, "../../.env");
+console.log(envPath);
+require("dotenv").config({ path: envPath });
 
-// Init app
+const Koa = require("koa");
+
 const app = new Koa();
 
-app.use(async function main(ctx) {
-  const res = await db.query("SELECT $1::text as message", ["Hello world"]);
-  ctx.body = res.rows[0].message;
+app.use(async ctx => {
+  ctx.body = {
+    status: "success",
+    message: "hello, world!"
+  };
 });
 
-app.listen(3000);
+module.exports = app.listen(process.env.PORT, () => {
+  console.log(`Server listening on port: ${process.env.PORT}`);
+});
