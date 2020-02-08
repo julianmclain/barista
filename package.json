@@ -4,10 +4,11 @@
   "description": "Web app for tracking and visualizing coffee consumption",
   "main": "app.js",
   "scripts": {
-    "start": "node backend/src/app.js",
+    "start": "NODE_ENV=production node backend/src/app.js",
     "dev": "parcel frontend/public/index.html",
+    "dev:backend": "NODE_ENV=development nodemon backend/src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "test:backend": "mocha ./backend/test/**/*.test.js",
+    "test:backend": "NODE_ENV=test mocha ./backend/test/**/*.test.js",
     "format": "prettier \"**/*.{js,html}\" --write",
     "lint": "eslint \"**/*.{js,jsx}\" --quiet"
   },
@@ -25,6 +26,7 @@
     "dotenv": "^8.2.0",
     "knex": "^0.20.8",
     "koa": "^2.11.0",
+    "koa-router": "^8.0.7",
     "nodemon": "^1.19.1",
     "pg": "^7.18.1",
     "react": "^16.12.0",

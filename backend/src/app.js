@@ -1,14 +1,9 @@
 require("dotenv").config();
 const Koa = require("koa");
+const mountRoutes = require("./routes");
 
 const app = new Koa();
-
-app.use(async ctx => {
-  ctx.body = {
-    status: "success",
-    message: "hello, world!"
-  };
-});
+mountRoutes(app);
 
 module.exports = app.listen(process.env.PORT, () => {
   console.log(`Server listening on port: ${process.env.PORT}`);
