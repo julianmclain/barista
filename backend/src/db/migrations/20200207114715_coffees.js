@@ -8,5 +8,5 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-  return knex.chema.dropTable("coffees");
+  return knex.schema.dropTable("coffees");
 };

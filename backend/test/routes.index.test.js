@@ -7,18 +7,13 @@ const server = require("../src/app");
 const knex = require("../src/db/knexConnection");
 
 describe("routes : /coffees", () => {
-  beforeEach(() => {
-    return knex.migrate
-      .rollback()
-      .then(() => {
-        return knex.migrate.latest();
-      })
-      .then(() => {
-        return knex.seed.run();
-      });
+  beforeEach(async () => {
+    await knex.migrate.rollback();
+    await knex.migrate.latest();
+    return knex.seed.run();
   });
 
-  afterEach(() => {
+  afterEach(async () => {
     return knex.migrate.rollback();
   });
 
@@ -28,26 +23,16 @@ describe("routes : /coffees", () => {
         .request(server)
         .get("/coffees")
         .end((err, res) => {
-          // TODO - see if chai supports promises
           should.not.exist(err);
-          res.status.should.eql(200);
-          res.type.should.eql("application/json");
-          res.body.status.should.equal("success");
-          res.body.message.should.eql("hello, world!");
+          res.status.should.equal(200);
+          res.type.should.equal("application/json");
+          res.body.coffees[0].should.equal("Hello world");
+          // test structure of request
+          // res.body.msg.should.equal("");
+          // res.body.code.should.equal("Success")
+          // res.body.params.should.equal("Hello world");
           done();
         });
     });
   });
 });
-
-// beforeEach(async done => {
-//   await knex.migrate.rollback();
-//   await knex.migrate.latest();
-//   await knex.seed.run();
-//   done();
-// });
-
-// afterEach(async done => {
-//   await knex.migrate.rollback();
-//   done();
-// });
