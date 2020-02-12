@@ -5,9 +5,11 @@
   "main": "app.js",
   "scripts": {
     "start": "NODE_ENV=production node backend/src/app.js",
-    "dev": "parcel frontend/public/index.html",
-    "dev:backend": "NODE_ENV=development nodemon backend/src/app.js",
+    "dev": "concurrently --kill-others \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "parcel frontend/public/index.html",
+    "dev:backend": "NODE_ENV=development nodemon --watch backend/src backend/src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "test:frontend": "echo \"Error: no test specified\" && exit 1",
     "test:backend": "NODE_ENV=test mocha ./backend/test/**/*.test.js",
     "format": "prettier \"**/*.{js,html}\" --write",
     "lint": "eslint \"**/*.{js,jsx}\" --quiet"
@@ -30,13 +32,17 @@
     "nodemon": "^1.19.1",
     "pg": "^7.18.1",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-calendar-heatmap": "^1.8.1",
+    "react-dom": "^16.12.0",
+    "react-tooltip": "^4.0.3"
   },
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
+    "concurrently": "^5.1.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-react": "^7.18.3",
     "mocha": "^7.0.1",
     "parcel-bundler": "^1.12.4",
     "prettier": "^1.19.1"

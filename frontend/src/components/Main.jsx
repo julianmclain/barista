@@ -1,12 +1,12 @@
 import React from "react";
+import ButtonControl from "./ButtonControl";
 
 const Main = () => {
   return (
     <div>
       <h1>Welcome</h1>
-      <p>Track each cup and view consumption over time</p>
-      <button class="main-button">Have a cup</button>
-      <button class="main-button">View consumption</button>
+      <p>Track every cup and view your consumption over time</p>
+      <ButtonControl user={null} />
     </div>
   );
 };
