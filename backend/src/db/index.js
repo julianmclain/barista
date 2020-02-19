@@ -1,12 +1,13 @@
 // Design taken from - https://node-postgres.com/guides/project-structure
 const { Pool } = require("pg");
+const { DATABASE } = require("../config");
 
 const config = {
-  host: process.env.PGHOST,
-  user: process.env.PGUSER,
-  password: process.env.PGPASSWORD,
-  datatabase: process.env.PGPASSWORD,
-  port: process.env.PGPORT
+  host: DATABASE.PGHOST,
+  user: DATABASE.PGUSER,
+  password: DATABASE.PGPASSWORD,
+  datatabase: DATABASE.PGDATABASE,
+  port: DATABASE.PGPORT
 };
 const pool = new Pool(config);
 

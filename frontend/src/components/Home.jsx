@@ -2,7 +2,8 @@ import React from "react";
 import ButtonControl from "./ButtonControl";
 import HeaderUnauthenticated from "./HeaderUnauthenticated";
 import HeaderAuthenticated from "./HeaderAuthenticated";
-import CalendarHeatmap from "./CalendarHeatmap";
+import CoffeeCalendar from "./CoffeeCalendar";
+import CoffeeCalendarDemo from "./CoffeeCalendarDemo";
 
 const Home = ({ user }) => {
   return (
@@ -13,8 +14,8 @@ const Home = ({ user }) => {
         <p className="main-sub-title">
           Track every cup and view your consumption over time
         </p>
-        <ButtonControl />
-        <CalendarHeatmap />
+        {user && <ButtonControl />}
+        {user ? <CoffeeCalendar /> : <CoffeeCalendarDemo />}
       </div>
     </div>
   );

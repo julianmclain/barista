@@ -3,7 +3,7 @@ import CalendarHeatmap from "react-calendar-heatmap";
 import "react-calendar-heatmap/dist/styles.css";
 import ReactTooltip from "react-tooltip";
 
-const calendarHeatmap = () => {
+const CoffeeCalendarDemo = () => {
   const today = new Date();
 
   const randomValues = getRange(200).map(index => {
@@ -54,4 +54,4 @@ function shiftDate(date, numDays) {
   return newDate;
 }
 
-export default calendarHeatmap;
+export default CoffeeCalendarDemo;
