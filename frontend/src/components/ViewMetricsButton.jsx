@@ -17,11 +17,7 @@ const ViewMetricsButton = () => {
   const handleClick = () => setLoading(true);
 
   return (
-    <button
-      className="main-button"
-      disabled={isLoading}
-      onClick={!isLoading ? handleClick : null}
-    >
+    <button disabled={isLoading} onClick={!isLoading ? handleClick : null}>
       {isLoading ? "Loading..." : "View consumption"}
     </button>
   );

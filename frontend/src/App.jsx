@@ -1,16 +1,19 @@
 import { render } from "react-dom";
 import React from "react";
-import Header from "./components/Header";
-import Main from "./components/Main";
-import CalendarHeatmap from "./components/CalendarHeatmap";
+import Home from "./components/Home";
+import { Router } from "@reach/router";
+import Signup from "./components/Signup";
+import Login from "./components/Login";
+import About from "./components/About";
 
 const App = () => {
   return (
-    <div>
-      <Header />
-      <Main />
-      <CalendarHeatmap />
-    </div>
+    <Router>
+      <Home path="/" />
+      <Login path="/login" />
+      <Signup path="/signup" />
+      <About path="/about" />
+    </Router>
   );
 };
 

@@ -7,8 +7,8 @@ const ButtonControl = user => {
   if (user) {
     contents = (
       <div className="main-button-wrapper">
-        <TrackCoffeeButton />
-        <ViewMetricsButton />
+        <TrackCoffeeButton className="main-button" />
+        <ViewMetricsButton className="main-button" />
       </div>
     );
   } else {

@@ -1,18 +1,23 @@
 import React from "react";
+import { Link } from "@reach/router";
 
 const Header = () => {
   return (
-    <header id="header">
+    <header className="header">
       <img
         src="https://www.dropbox.com/s/uv6c8t2zymcbo9y/barista-logo.png?raw=1"
         alt="barista"
       />
-      <nav id="header-nav">
-        <ul>
-          <li className="header-nav-item">About</li>
-          <li className="header-nav-item">Sign in</li>
-          <li className="header-nav-item">Sign out</li>
-        </ul>
+      <nav className="header-nav">
+        <Link to="/login" className="header-nav-item">
+          Login
+        </Link>
+        <Link to="/signup" className="header-nav-item">
+          Sign up
+        </Link>
+        <Link to="/about" className="header-nav-item">
+          About
+        </Link>
       </nav>
     </header>
   );

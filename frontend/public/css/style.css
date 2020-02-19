@@ -1,0 +1,49 @@
+body {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.calendar-heatmap {
+  height: 300px;
+  width: 600px;
+  margin-top: 50px;
+  display: inline-block;
+}
+
+.header * {
+  display: inline-block;
+  vertical-align: top;
+  height: 50px;
+}
+
+.header-nav {
+  float: right;
+  margin-top: 20px;
+  margin-right: 25px;
+}
+
+.header-nav-item {
+  margin-right: 1em;
+}
+
+.main {
+  margin: auto;
+  width: 50%;
+  padding-top: 100px;
+}
+
+.main-title {
+  text-align: center;
+}
+
+.main-sub-title {
+  text-align: center;
+}
+
+.main-button-wrapper {
+  text-align: center;
+}
+
+.react-calendar-heatmap {
+  overflow: auto;
+  max-width: 100%;
+}
