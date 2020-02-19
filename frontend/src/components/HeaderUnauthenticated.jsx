@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "@reach/router";
 
-const Header = () => {
+const HeaderUnauthenticated = () => {
   return (
     <header className="header">
       <img
@@ -23,4 +23,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderUnauthenticated;

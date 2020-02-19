@@ -9,7 +9,7 @@ import About from "./components/About";
 const App = () => {
   return (
     <Router>
-      <Home path="/" />
+      <Home user={false} path="/" />
       <Login path="/login" />
       <Signup path="/signup" />
       <About path="/about" />
