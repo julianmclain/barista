@@ -1,6 +1,6 @@
 // Design taken from - https://node-postgres.com/guides/project-structure
 const { Pool } = require("pg");
-const { DATABASE } = require("../config");
+const { DATABASE } = require("../config/config");
 
 const config = {
   host: DATABASE.PGHOST,
